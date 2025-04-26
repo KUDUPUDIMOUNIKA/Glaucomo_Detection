@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4">Early Glaucoma Detection</h1>
+        <p class="lead">Using advanced CNN technology to detect glaucoma from retinal images</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg mt-3">Try Detection</a>
+    </div>
+</section>
+
+<section class="features py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Fast Analysis</h3>
+                        <p>Get results in seconds with our advanced image processing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>High Accuracy</h3>
+                        <p>Our CNN model achieves over 95% accuracy in testing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Easy to Use</h3>
+                        <p>Simple interface requiring just an eye image upload.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

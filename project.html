@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Project Details{% endblock %}
+
+{% block content %}
+<div class="project-page container mt-4">
+    <h1 class="mb-4 text-center">Project Details</h1>
+    
+    <!-- Overview Section -->
+    <section class="overview mb-5 p-4 bg-light rounded-3">
+        <h2 class="border-bottom pb-2 mb-3">Project Overview</h2>
+        <p class="lead">This project develops an automated glaucoma detection system using deep learning to analyze retinal fundus images for early signs of glaucoma, a leading cause of irreversible blindness worldwide.</p>
+        <p>The system combines advanced computer vision techniques with a custom convolutional neural network to provide accurate and fast screening capabilities that can assist ophthalmologists in early diagnosis.</p>
+    </section>
+
+    <!-- Spacer -->
+    <div class="my-5"></div>
+
+    <!-- Technologies Section -->
+    <section class="tech-section mb-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">Technologies Used</h2>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="bi bi-code-square me-3 text-primary"></i>
+                                        Python with TensorFlow/Keras
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="bi bi-server me-3 text-primary"></i>
+                                        Flask Web Framework
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="bi bi-layout-wtf me-3 text-primary"></i>
+                                        Bootstrap 5
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="bi bi-eye me-3 text-primary"></i>
+                                        OpenCV Image Processing
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer with decorative element -->
+    <div class="text-center my-5">
+        <hr class="mx-auto" style="width: 50%; border-top: 2px dashed #ddd;">
+    </div>
+
+    <!-- Key Features Section -->
+    <section class="features mb-5">
+        <h2 class="text-center mb-5">Key Features</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-diagram-3 fs-1 text-primary"></i>
+                        </div>
+                        <h3 class="h4">Advanced CNN Architecture</h3>
+                        <p class="card-text">Custom 4-layer convolutional neural network with batch normalization and dropout layers for effective regularization and stable training.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-database fs-1 text-primary"></i>
+                        </div>
+                        <h3 class="h4">Comprehensive Dataset</h3>
+                        <p class="card-text">Trained on 10,000+ retinal images from multiple public datasets including ACRIMA, ORIGA, and RIM-ONE with extensive data augmentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo CTA Section -->
+    <section class="demo py-5 bg-light rounded-3 mt-4">
+        <div class="text-center">
+            <h2 class="mb-4">Ready to Experience It Yourself?</h2>
+            <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg px-4">
+                <i class="bi bi-play-circle me-2"></i> Try Live Demo
+            </a>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(13, 110, 253, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .project-page section {
+        margin-bottom: 3rem;
+    }
+    .card {
+        transition: transform 0.3s ease;
+        border: none;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}

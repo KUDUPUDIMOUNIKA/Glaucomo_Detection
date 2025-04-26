@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Glaucoma Detection{% endblock %}
+
+{% block content %}
+<div class="prediction-page">
+    <h1 class="mb-4">Glaucoma Detection</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Upload Eye Image</h2>
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <input class="form-control" type="file" name="eye_image" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Analyze</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        {% if show_result %}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Detection Result</h2>
+                    <div class="result-display">
+                        <p><strong>Status:</strong> 
+                            <span class="badge bg-{% if result == 'Positive' %}danger{% else %}success{% endif %}">
+                                {{ result }}
+                            </span>
+                        </p>
+                        <p><strong>Confidence:</strong> {{ confidence }}</p>
+                        <div class="alert alert-{% if result == 'Positive' %}warning{% else %}info{% endif %} mt-3">
+                            {% if result == 'Positive' %}
+                                This result suggests possible glaucoma. Please consult an ophthalmologist.
+                            {% else %}
+                                No signs of glaucoma detected. Regular checkups are still recommended.
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
