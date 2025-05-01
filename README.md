@@ -6,5 +6,6 @@ This project uses multiple datasets, including:
 Drishti-GS (101 images)
 RIM-ONE DL
 ACRIMA
+and trained all three datasets into single one which is fundus trained data
 The goal is to develop an automated system for faster and more accurate glaucoma diagnosis, aiding early intervention and treatment.
 
